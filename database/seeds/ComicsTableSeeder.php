@@ -23,6 +23,7 @@ class ComicsTableSeeder extends Seeder
             $new_comic['series']=$data['series'];
             $new_comic['sale_date']=$data['sale_date'];
             $new_comic['type']=$data['type'];
+            
             $new_comic->save();
         }
         
