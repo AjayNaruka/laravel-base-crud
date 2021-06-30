@@ -17,8 +17,14 @@
       <th scope="row">{{$comic['id']}}</th>
       <td>{{$comic['title']}}</td>
       <td><a href="{{route('comics.show',$comic)}}"><button type="button" class="btn btn-primary">SHOW</button></a></td>
-      <td><button type="button" class="btn btn-secondary">EDIT</button></td>
-      <td><button type="button" class="btn btn-danger">DELETE</button></td>
+      <td> <a href="{{route('comics.edit',$comic)}}"><button type="button" class="btn btn-secondary">EDIT</button></a></td>
+      <td>
+        <form action="{{route('comics.destroy',$comic)}}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">DELETE</button>
+        </form>
+        </td>
     </tr>
     @endforeach
     
